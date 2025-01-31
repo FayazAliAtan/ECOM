@@ -1,4 +1,3 @@
-\
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,905 +10,537 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Include Bootstrap and FontAwesome -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <!-- Bootstrap JS Bundle (includes Popper) -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Navigation Bar -->
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 </head>
-<style>
-    /* General Styles */
-    body {
-        font-family: 'Arial', sans-serif;
-        background-color: #f4f7fa;
-        color: #333;
-    }
-
-    /* Product Section */
-    #products {
-        background-color: #fff;
-        padding-top: 60px;
-        padding-bottom: 60px;
-    }
-
-    #products h2 {
-        font-size: 2.5rem;
-        color: #333;
-        font-weight: bold;
-        margin-bottom: 40px;
-    }
-
-    /* Sorting Dropdown */
-    #sort {
-        border: 1px solid #ddd;
-        padding: 10px;
-        font-size: 1rem;
-        border-radius: 30px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    #sort:focus {
-        outline: none;
-        border-color: #007bff;
-        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
-    }
-
-    /* Product Cards */
-    .product-card {
-        position: relative;
-        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
-
-    .product-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-    }
-
-    .product-card .card {
-        border: none;
-        border-radius: 20px;
-        overflow: hidden;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    .product-card:hover .card {
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    }
-
-    .product-card .card-img-top {
-        height: 220px;
-        object-fit: cover;
-        border-bottom: 3px solid #007bff;
-    }
-
-    .product-card .card-body {
-        padding: 20px;
-    }
-
-    .product-card .card-title {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #333;
-        margin-bottom: 15px;
-    }
-
-    .product-card .card-text {
-        font-size: 1rem;
-        color: #777;
-        margin-bottom: 20px;
-    }
-
-    .product-card .d-flex {
-        font-size: 1rem;
-    }
-
-    .product-card .d-flex .text-muted {
-        color: #666;
-    }
-
-    .product-card .d-flex .text-warning {
-        color: #f39c12;
-    }
-
-    .product-card .btn {
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 30px;
-        text-transform: uppercase;
-        padding: 10px 25px;
-        font-size: 1rem;
-        font-weight: 600;
-        transition: all 0.3s ease;
-    }
-
-    .product-card .btn:hover {
-        background-color: #0056b3;
-    }
-
-    /* Responsive Layout for Smaller Screens */
-    @media (max-width: 768px) {
-        #sort {
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .product-card .card-img-top {
-            height: 180px;
-        }
-
-        .product-card .card-title {
-            font-size: 1rem;
-        }
-
-        .product-card .card-text {
-            font-size: 0.9rem;
-        }
-    }
-
-    /* Optional: Add a subtle shadow to the page */
-    body {
-        background-color: #f8f9fa;
-        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Hover Effects for Buttons */
-    .btn {
-        background-color: #007bff;
-        color: #fff;
-        border-radius: 30px;
-        transition: background-color 0.3s, transform 0.3s;
-    }
-
-    .btn:hover {
-        background-color: #0056b3;
-        transform: translateY(-3px);
-    }
-
-    /* General Carousel Styling */
-    #carousel {
-        position: relative;
-        background-color: #f4f7fb;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Image Styling */
-    .carousel-item img {
-        height: 500px;
-        object-fit: cover;
-        border-radius: 15px;
-        transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
-    }
-
-    /* Hover Effect for Images */
-    .carousel-item:hover img {
-        transform: scale(1.1);
-        opacity: 0.85;
-    }
-
-    /* Caption Styling */
-    .carousel-caption {
-        background: rgba(0, 0, 0, 0.4);
-        /* Semi-transparent background */
-        border-radius: 10px;
-        padding: 30px;
-        text-align: center;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        opacity: 0;
-        transition: opacity 0.5s ease-in-out;
-    }
-
-    /* Show Caption on Hover */
-    .carousel-item:hover .carousel-caption {
-        opacity: 1;
-    }
-
-    /* Title Styling */
-    .carousel-title {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #fff;
-        text-transform: uppercase;
-        letter-spacing: 3px;
-        margin-bottom: 20px;
-        text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.6);
-    }
-
-    /* Subtitle Styling */
-    .carousel-caption p {
-        font-size: 1.5rem;
-        font-weight: 500;
-        color: #fff;
-        margin-bottom: 30px;
-        letter-spacing: 1px;
-    }
-
-    /* Button Styling */
-    .carousel-caption .btn {
-        font-size: 1.2rem;
-        padding: 15px 35px;
-        background-color: #FF5722;
-        /* Vibrant Color */
-        color: #fff;
-        border-radius: 50px;
-        font-weight: 600;
-        letter-spacing: 1.5px;
-        text-transform: uppercase;
-        transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-        box-shadow: 0px 8px 15px rgba(255, 87, 34, 0.3);
-    }
-
-    /* Button Hover Effect */
-    .carousel-caption .btn:hover {
-        background-color: #f44336;
-        transform: translateY(-5px);
-        box-shadow: 0px 12px 20px rgba(255, 87, 34, 0.4);
-    }
-
-    /* Custom Indicators */
-    .carousel-indicators li {
-        background-color: #FF5722;
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
-        transition: background-color 0.3s ease;
-    }
-
-    /* Active Indicator */
-    .carousel-indicators .active {
-        background-color: #fff;
-    }
-
-    /* Hover Effect for Indicators */
-    .carousel-indicators li:hover {
-        background-color: #f44336;
-    }
-
-    /* Animated Caption Fade Effect */
-    .fade-caption {
-        opacity: 0;
-        animation: fadeIn 1s forwards 0.5s;
-    }
-
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-        }
-
-        to {
-            opacity: 1;
-        }
-    }
-
-    /* Carousel Controls (Arrows) */
-    .carousel-control-prev-icon,
-    .carousel-control-next-icon {
-        background-color: #FF5722;
-        border-radius: 50%;
-        height: 50px;
-        width: 50px;
-        opacity: 0.8;
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        box-shadow: 0 0 15px rgba(255, 87, 34, 0.5);
-    }
-
-    /* Hover Effect for Arrows */
-    .carousel-control-prev-icon:hover,
-    .carousel-control-next-icon:hover {
-        opacity: 1;
-        transform: scale(1.1);
-        box-shadow: 0 0 20px rgba(255, 87, 34, 0.7);
-    }
-
-    /* Apply Gradient Overlays to Images */
-    .carousel-item:nth-child(1) img {
-        background: linear-gradient(45deg, rgba(255, 87, 34, 0.5), rgba(255, 193, 7, 0.5));
-    }
-
-    .carousel-item:nth-child(2) img {
-        background: linear-gradient(45deg, rgba(52, 152, 219, 0.5), rgba(39, 174, 96, 0.5));
-    }
-
-    .carousel-item:nth-child(3) img {
-        background: linear-gradient(45deg, rgba(241, 196, 15, 0.5), rgba(46, 204, 113, 0.5));
-    }
-
-    /* Card Styling */
-    .card {
-        border-radius: 15px;
-        overflow: hidden;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        background-color: #ffffff;
-        position: relative;
-    }
-
-    .card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.15);
-        background-color: #f9f9f9;
-    }
-
-    .card-img-top {
-        height: 200px;
-        object-fit: cover;
-        transition: transform 0.3s ease;
-        filter: brightness(0.9);
-    }
-
-    .card-img-top:hover {
-        transform: scale(1.1);
-        filter: brightness(1);
-    }
-
-    .card-body {
-        padding: 20px;
-        text-align: center;
-        position: relative;
-    }
-
-    .card-title {
-        font-size: 1.3rem;
-        font-weight: 700;
-        color: #333;
-        margin-bottom: 10px;
-        transition: color 0.3s ease;
-    }
-
-    .card-title:hover {
-        color: #ffcc00;
-        /* Highlight text color on hover */
-    }
-
-    .card-text {
-        font-size: 1rem;
-        color: #666;
-        margin-bottom: 15px;
-    }
-
-    .card-footer {
-        background-color: #f4f4f4;
-        border-top: 1px solid #ddd;
-        text-align: center;
-        padding: 10px;
-        font-weight: bold;
-    }
-
-    /* Button within the Card */
-    .card-footer .btn {
-        background-color: #ffcc00;
-        color: black;
-        border: none;
-        padding: 10px 20px;
-        border-radius: 30px;
-        font-size: 1rem;
-        transition: background-color 0.3s ease;
-    }
-
-    .card-footer .btn:hover {
-        background-color: #e6b800;
-        transform: translateY(-2px);
-    }
-
-    /* Overlay for image */
-    .card-img-overlay {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.3);
-        transition: background 0.3s ease;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    .card-img-top:hover+.card-img-overlay {
-        opacity: 1;
-    }
-
-    .card-body {
-        z-index: 2;
-    }
-
-    /* Navbar Custom Styles */
-    .navbar {
-        padding: 1rem 2rem;
-        transition: background-color 0.3s ease;
-        animation: slideIn 1s ease-out;
-    }
-
-    /* Navbar Slide-In Animation */
-    @keyframes slideIn {
-        0% {
-            transform: translateY(-100%);
-            opacity: 0;
-        }
-
-        100% {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    /* Hover Effects for Navbar Items */
-    .navbar-nav .nav-link {
-        font-size: 1.1rem;
-        font-weight: 500;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        padding: 10px 15px;
-        transition: color 0.3s ease, transform 0.3s ease;
-        opacity: 0;
-        animation: fadeIn 0.5s forwards;
-        animation-delay: 0.2s;
-        /* Delay for smooth entrance */
-    }
-
-    .navbar-nav .nav-link:hover {
-        color: #ffd700;
-        /* Golden color on hover */
-        transform: translateY(-3px);
-    }
-
-    .navbar-nav .nav-item.active .nav-link {
-        color: #ffd700 !important;
-        /* Active link color */
-        font-weight: 600;
-        text-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
-        /* Glow effect */
-    }
-
-    /* Animation for Navbar Links (Fade In) */
-    @keyframes fadeIn {
-        0% {
-            opacity: 0;
-            transform: translateY(10px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    /* Dropdown Menu Styles */
-    .nav-item.dropdown:hover .dropdown-menu {
-        display: block;
-        opacity: 1;
-        transform: translateY(0);
-        transition: all 0.3s ease;
-        animation: dropdownSlideIn 0.5s ease-out;
-    }
-
-    /* Dropdown Menu Animation */
-    @keyframes dropdownSlideIn {
-        0% {
-            opacity: 0;
-            transform: translateY(-10px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-
-    .dropdown-menu {
-        background-color: #343a40;
-        border-radius: 10px;
-        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-    }
-
-    .dropdown-item {
-        color: #fff;
-        transition: background-color 0.3s ease, color 0.3s ease;
-    }
-
-    .dropdown-item:hover {
-        background-color: #ffd700;
-        color: #000;
-    }
-
-    /* Navbar Background */
-    .navbar-light.bg-primary {
-        background-color: #007bff !important;
-    }
-
-    /* Fix the Navbar at the top */
-    .fixed-top {
-        z-index: 1050;
-    }
-
-    /* Icon Styling in Navbar */
-    .navbar-brand i,
-    .nav-link i {
-        margin-right: 8px;
-    }
-
-    /* Make the Navbar sticky */
-    .navbar {
-        position: sticky;
-        top: 0;
-        z-index: 1050;
-        /* Keep it above other content */
-        transition: background-color 0.3s ease;
-    }
-
-    /* Change navbar color when scrolling */
-    .navbar-scrolled {
-        background-color: #007bff;
-        /* Dark blue color when scrolling */
-    }
-
-    /* Add animation delay to navbar items */
-    .navbar-nav .nav-item:nth-child(1) .nav-link {
-        animation-delay: 0.3s;
-    }
-
-    .navbar-nav .nav-item:nth-child(2) .nav-link {
-        animation-delay: 0.4s;
-    }
-
-    .navbar-nav .nav-item:nth-child(3) .nav-link {
-        animation-delay: 0.5s;
-    }
-
-    .navbar-nav .nav-item:nth-child(4) .nav-link {
-        animation-delay: 0.6s;
-    }
-
-    .navbar-nav .nav-item:nth-child(5) .nav-link {
-        animation-delay: 0.7s;
-    }
-</style>
 
 <body>
 
-   <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-light bg-primary shadow-sm fixed-top">
-    <a class="navbar-brand text-white" href="#">
-        <i class="fas fa-shopping-cart"></i> AI Shop
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link text-white" href="#"><i class="fas fa-home"></i> Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#products"><i class="fas fa-box"></i> Products</a>
-            </li>
-            <li class="nav-item">
-                <a id="view-cart" class="nav-link text-white" href="#" data-toggle="modal"
-                    data-target="#cart-modal">
-                    <i class="fas fa-cart-plus"></i> Cart (0)
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#profileModal">
-                    <i class="fas fa-user-circle"></i> Profile
-                </a>
-            </li>
 
-            <!-- Dropdown for Settings -->
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <i class="fas fa-cogs"></i> Settings
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" data-toggle="modal" data-target="#settingsModal">
-                        <i class="fas fa-user-cog"></i> Account Settings
-                    </a>
-                    <a class="dropdown-item" data-toggle="modal" data-target="#ordersModal">
-                        <i class="fas fa-box-open"></i> View Orders
-                    </a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item text-danger" data-toggle="modal" data-target="#logoutModal">
-                        <i class="fas fa-sign-out-alt"></i> Logout
-                    </a>
-                </div>
-            </li>
-            
-            <!-- Login & Signup -->
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#loginModal">
-                    <i class="fas fa-sign-in-alt"></i> Login
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="#" data-toggle="modal" data-target="#signupModal">
-                    <i class="fas fa-user-plus"></i> Signup
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div class="modal fade" id="ordersModal" tabindex="-1" role="dialog" aria-labelledby="ordersModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="ordersModalLabel">Your Orders</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary shadow-sm fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand text-white fw-bold" href="#">
+                <i class="fas fa-shopping-cart"></i> AI Shop
+            </a>
+
+            <!-- Mobile Toggle Button -->
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Navbar Links -->
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#"><i class="fas fa-home"></i> Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#products"><i class="fas fa-box"></i> Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a id="view-cart" class="nav-link text-white position-relative" href="#" data-bs-toggle="modal"
+                            data-bs-target="#cart-modal">
+                            <i class="fas fa-cart-plus"></i> Cart
+                            <span id="cart-count"
+                                class="badge bg-light text-dark position-absolute top-0 start-100 translate-middle rounded-pill">
+                                0
+                            </span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#profileModal">
+                            <i class="fas fa-user-circle"></i> Profile
+                        </a>
+                    </li>
+
+                    <!-- Dropdown Menu -->
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-cogs"></i> Settings
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end shadow-lg" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#settingsModal">
+                                    <i class="fas fa-user-cog"></i> Account Settings</a></li>
+                            <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#ordersModal">
+                                    <i class="fas fa-box-open"></i> View Orders</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item text-danger" data-bs-toggle="modal"
+                                    data-bs-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">
+                            <i class="fas fa-sign-in-alt"></i> Login
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#" data-bs-toggle="modal" data-bs-target="#signupModal">
+                            <i class="fas fa-user-plus"></i> Signup
+                        </a>
+                    </li>
+                </ul>
             </div>
-            <div class="modal-body">
-                <!-- Orders List -->
-                <div class="list-group">
-                    <!-- Order Item 1 -->
-                    <div class="list-group-item">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Order #12345</h5>
-                            <small class="text-success">Delivered</small>
-                        </div>
-                        <p class="mb-1">3 Items - Total: $99.99</p>
-                        <button class="btn btn-sm btn-primary view-order-details" data-toggle="modal" data-target="#orderDetailsModal" data-order-id="12345">View Details</button>
-                        <button class="btn btn-sm btn-secondary track-order" data-order-id="12345">Track Order</button>
-                    </div>
+        </div>
+    </nav>
 
-                    <!-- Order Item 2 -->
-                    <div class="list-group-item">
-                        <div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">Order #67890</h5>
-                            <small class="text-warning">Shipped</small>
-                        </div>
-                        <p class="mb-1">2 Items - Total: $59.99</p>
-                        <button class="btn btn-sm btn-primary view-order-details" data-toggle="modal" data-target="#orderDetailsModal" data-order-id="67890">View Details</button>
-                        <button class="btn btn-sm btn-secondary track-order" data-order-id="67890">Track Order</button>
+
+    <!-- Cart Modal -->
+    <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow-lg border-0">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="cartModalLabel"><i class="fas fa-shopping-cart"></i> Your Cart</h5>
+                    <!-- Close button with Bootstrap modal dismissal -->
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="cart-items">
+                    <p class="text-center text-muted">Your cart is empty.</p>
+                    <!-- Cart items will be dynamically inserted here -->
+                </div>
+                <div class="modal-footer">
+                    <p class="fw-bold">Total: <span id="total-amount">$0.00</span></p>
+                    <!-- Close button (closes modal) -->
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <!-- Checkout button -->
+                    <button type="button" class="btn btn-success" id="checkout-btn">Checkout</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Orders Modal -->
+    <div class="modal fade" id="ordersModal" tabindex="-1" aria-labelledby="ordersModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow-lg border-0">
+                <div class="modal-header bg-dark text-white">
+                    <h5 class="modal-title" id="ordersModalLabel"><i class="fas fa-box-open"></i> Your Orders</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="list-group" id="orders-list">
+                        <!-- Orders will be dynamically inserted here -->
                     </div>
-                    
-                    <!-- No Orders Message -->
-                    <div class="list-group-item text-center text-muted" id="noOrdersMessage" style="display: none;">
+                    <div class="text-center text-muted mt-3" id="noOrdersMessage" style="display: none;">
                         No orders found! Start shopping now.
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<!-- Order Details Modal -->
-<div class="modal fade" id="orderDetailsModal" tabindex="-1" role="dialog" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="orderDetailsModalLabel">Order Details</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <p><strong>Order ID:</strong> <span id="orderId"></span></p>
-                <p><strong>Status:</strong> <span id="orderStatus"></span></p>
-                <p><strong>Total Items:</strong> <span id="orderItems"></span></p>
-                <p><strong>Total Price:</strong> <span id="orderTotal"></span></p>
-                <p><strong>Shipping Address:</strong> <span id="shippingAddress"></span></p>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Profile Modal -->
-<div class="modal fade" id="profileModal" tabindex="-1" role="dialog" aria-labelledby="profileModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="profileModalLabel">Your Profile</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body text-center">
-                <!-- Profile Picture -->
-                <div class="position-relative d-inline-block">
-                    <img id="profileImage" src="data:image/jpeg;base64,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" alt="Profile Picture" class="rounded-circle mb-3" width="120" height="120">
-                    <label for="uploadProfilePic" class="btn btn-sm btn-outline-secondary position-absolute" style="bottom: 0; right: 0;">
-                        <i class="fas fa-camera"></i>
-                    </label>
-                    <input type="file" id="uploadProfilePic" class="d-none">
+    <!-- Order Details Modal -->
+    <div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content shadow-lg border-0">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="orderDetailsModalLabel"><i class="fas fa-receipt"></i> Order Details
+                    </h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                 </div>
-
-                <!-- User Info -->
-                <h5 id="profileName">Fayaz Ali </h5>
-                <p id="profileEmail" class="text-muted">fayaz@example.com</p>
-                <p><strong>Phone:</strong> <span id="profilePhone">+1 234 567 890</span></p>
-                <p><strong>Address:</strong> <span id="profileAddress">123 Main Street, kargil Ladakh</span></p>
-                <p><strong>Joined:</strong> <span id="profileJoinDate">January 10, 2025</span></p>
-
-                <hr>
-
-                <!-- Edit Profile Form -->
-                <h6 class="text-left">Edit Profile</h6>
-                <form id="profileForm">
-                    <div class="form-group">
-                        <label for="editName">Full Name</label>
-                        <input type="text" class="form-control" id="editName" placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="editEmail">Email</label>
-                        <input type="email" class="form-control" id="editEmail" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="editPhone">Phone</label>
-                        <input type="text" class="form-control" id="editPhone" placeholder="Enter your phone number">
-                    </div>
-                    <div class="form-group">
-                        <label for="editAddress">Address</label>
-                        <input type="text" class="form-control" id="editAddress" placeholder="Enter your address">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<!-- Login Modal -->
-<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="loginModalLabel">Login</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="loginEmail">Email</label>
-                        <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="loginPassword">Password</label>
-                        <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password">
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-block">Login</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Signup Modal -->
-<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-labelledby="signupModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="signupModalLabel">Create an Account</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                        <label for="signupName">Full Name</label>
-                        <input type="text" class="form-control" id="signupName" placeholder="Enter your full name">
-                    </div>
-                    <div class="form-group">
-                        <label for="signupEmail">Email</label>
-                        <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email">
-                    </div>
-                    <div class="form-group">
-                        <label for="signupPassword">Password</label>
-                        <input type="password" class="form-control" id="signupPassword" placeholder="Create a password">
-                    </div>
-                    <button type="submit" class="btn btn-success btn-block">Signup</button>
-                </form>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-<div class="modal fade" id="settingsModal" tabindex="-1" role="dialog" aria-labelledby="settingsModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="settingsModalLabel">Account Settings</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <!-- Tabs for Different Settings -->
-                <ul class="nav nav-tabs" id="settingsTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="profile-tab" data-toggle="tab" href="#profileSettings" role="tab">Profile</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="security-tab" data-toggle="tab" href="#securitySettings" role="tab">Security</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="preferences-tab" data-toggle="tab" href="#preferencesSettings" role="tab">Preferences</a>
-                    </li>
-                </ul>
-
-                <!-- Tab Content -->
-                <div class="tab-content mt-3">
-                    <!-- Profile Settings -->
-                    <div class="tab-pane fade show active" id="profileSettings" role="tabpanel">
-                        <form>
-                            <div class="form-group">
-                                <label for="settingsName">Full Name</label>
-                                <input type="text" class="form-control" id="settingsName" placeholder="Enter your name">
-                            </div>
-                            <div class="form-group">
-                                <label for="settingsEmail">Email</label>
-                                <input type="email" class="form-control" id="settingsEmail" placeholder="Enter your email">
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">Save Changes</button>
-                        </form>
-                    </div>
-
-                    <!-- Security Settings -->
-                    <div class="tab-pane fade" id="securitySettings" role="tabpanel">
-                        <form>
-                            <div class="form-group">
-                                <label for="currentPassword">Current Password</label>
-                                <input type="password" class="form-control" id="currentPassword" placeholder="Enter current password">
-                            </div>
-                            <div class="form-group">
-                                <label for="newPassword">New Password</label>
-                                <input type="password" class="form-control" id="newPassword" placeholder="Enter new password">
-                            </div>
-                            <div class="form-group">
-                                <label for="confirmPassword">Confirm New Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm new password">
-                            </div>
-                            <button type="submit" class="btn btn-danger btn-block">Update Password</button>
-                        </form>
-                    </div>
-
-                    <!-- Preferences Settings -->
-                    <div class="tab-pane fade" id="preferencesSettings" role="tabpanel">
-                        <div class="form-group">
-                            <label>Notification Preferences</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
-                                <label class="form-check-label" for="emailNotifications">
-                                    Receive email notifications
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" id="smsNotifications">
-                                <label class="form-check-label" for="smsNotifications">
-                                    Receive SMS notifications
-                                </label>
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <label>Dark Mode</label>
-                            <div class="custom-control custom-switch">
-                                <input type="checkbox" class="custom-control-input" id="darkModeToggle">
-                                <label class="custom-control-label" for="darkModeToggle">Enable Dark Mode</label>
-                            </div>
-                        </div>
-                        <button class="btn btn-success btn-block">Save Preferences</button>
-                    </div>
+                <div class="modal-body">
+                    <p><strong>Order ID:</strong> <span id="orderId"></span></p>
+                    <p><strong>Status:</strong> <span id="orderStatus"></span></p>
+                    <p><strong>Total Items:</strong> <span id="orderItems"></span></p>
+                    <p><strong>Total Price:</strong> <span id="orderTotal"></span></p>
+                    <p><strong>Shipping Address:</strong> <span id="shippingAddress"></span></p>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+    <!-- Profile Modal -->
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg rounded-4">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title fw-bold" id="profileModalLabel">Your Profile</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+
+                <div class="modal-body text-center">
+                    <!-- Profile Picture -->
+                    <div class="position-relative d-inline-block">
+                        <img id="profileImage"
+                            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ041Ye09P6HedWHiL9sJjpN4zL32EWfhjrFg&s"
+                            alt="Profile Picture" class="rounded-circle shadow-lg border border-3 border-light"
+                            width="130" height="130">
+
+                        <!-- Upload Button -->
+                        <label for="uploadProfilePic"
+                            class="btn btn-sm btn-light rounded-circle shadow-lg position-absolute"
+                            style="bottom: 5px; right: 5px; padding: 6px 9px; cursor: pointer;">
+                            <i class="fas fa-camera text-primary"></i>
+                        </label>
+                        <input type="file" id="uploadProfilePic" class="d-none">
+                    </div>
+
+                    <!-- User Info -->
+                    <h5 id="profileName" class="fw-bold mt-3">Fayaz Ali</h5>
+                    <p id="profileEmail" class="text-muted">fayaz@example.com</p>
+                    <p><strong>Phone:</strong> <span id="profilePhone">+1 234 567 890</span></p>
+                    <p><strong>Address:</strong> <span id="profileAddress">123 Main Street, Kargil, Ladakh</span></p>
+                    <p><strong>Joined:</strong> <span id="profileJoinDate">January 10, 2025</span></p>
+
+                    <hr>
+
+                    <!-- Edit Profile Form -->
+                    <h6 class="text-start fw-bold text-primary">Edit Profile</h6>
+                    <form id="profileForm">
+                        <div class="mb-3">
+                            <label for="editName" class="form-label">Full Name</label>
+                            <input type="text" class="form-control form-control-lg" id="editName"
+                                placeholder="Enter your full name">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control form-control-lg" id="editEmail"
+                                placeholder="Enter your email">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editPhone" class="form-label">Phone</label>
+                            <input type="text" class="form-control form-control-lg" id="editPhone"
+                                placeholder="Enter your phone number">
+                        </div>
+                        <div class="mb-3">
+                            <label for="editAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control form-control-lg" id="editAddress"
+                                placeholder="Enter your address">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100 rounded-pill shadow">Save
+                            Changes</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
-    <!-- Carousel Section -->
-    <!-- Carousel Section with New Features -->
+    <!-- Login Modal -->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg border-0 rounded">
+                <div class="modal-header text-white" style="background: linear-gradient(135deg, #007bff, #0056b3);">
+                    <h5 class="modal-title"><i class="fas fa-sign-in-alt"></i> Welcome Back!</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="loginForm">
+                        <!-- Email Input -->
+                        <div class="mb-3">
+                            <label for="loginEmail" class="form-label"><i class="fas fa-envelope"></i> Email
+                                Address</label>
+                            <input type="email" class="form-control" id="loginEmail" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <!-- Password Input -->
+                        <div class="mb-3 position-relative">
+                            <label for="loginPassword" class="form-label"><i class="fas fa-lock"></i> Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="loginPassword"
+                                    placeholder="Enter your password" required>
+                                <span class="input-group-text toggle-password"
+                                    onclick="togglePassword('loginPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Remember Me & Forgot Password -->
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="rememberMe">
+                                <label class="form-check-label" for="rememberMe">Remember Me</label>
+                            </div>
+                            <a href="#" class="text-primary">Forgot Password?</a>
+                        </div>
+                        <!-- Login Button -->
+                        <button type="submit" class="btn btn-primary w-100"><i class="fas fa-sign-in-alt"></i>
+                            Login</button>
+                    </form>
+
+                    <!-- Social Login -->
+                    <div class="text-center mt-4">
+                        <p class="mb-2">Or login with</p>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-outline-danger mx-2"><i class="fab fa-google"></i> Google</button>
+                            <button class="btn btn-outline-primary mx-2"><i class="fab fa-facebook-f"></i>
+                                Facebook</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Signup Link -->
+                <div class="modal-footer justify-content-center">
+                    <p>Don't have an account?
+                        <a href="#" class="text-primary" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#signupModal">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+    <!-- Signup Modal -->
+    <div class="modal fade" id="signupModal" tabindex="-1" aria-labelledby="signupModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content shadow-lg border-0 rounded">
+                <div class="modal-header text-white" style="background: linear-gradient(135deg, #28a745, #218838);">
+                    <h5 class="modal-title"><i class="fas fa-user-plus"></i> Join Us Today!</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body p-4">
+                    <form id="signupForm">
+                        <!-- Full Name -->
+                        <div class="mb-3">
+                            <label for="signupName" class="form-label"><i class="fas fa-user"></i> Full Name</label>
+                            <input type="text" class="form-control" id="signupName" placeholder="Enter your full name"
+                                required>
+                        </div>
+                        <!-- Email -->
+                        <div class="mb-3">
+                            <label for="signupEmail" class="form-label"><i class="fas fa-envelope"></i> Email
+                                Address</label>
+                            <input type="email" class="form-control" id="signupEmail" placeholder="Enter your email"
+                                required>
+                        </div>
+                        <!-- Password -->
+                        <div class="mb-3 position-relative">
+                            <label for="signupPassword" class="form-label"><i class="fas fa-lock"></i> Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="signupPassword"
+                                    placeholder="Create a password" required>
+                                <span class="input-group-text toggle-password"
+                                    onclick="togglePassword('signupPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Confirm Password -->
+                        <div class="mb-3 position-relative">
+                            <label for="signupConfirmPassword" class="form-label"><i class="fas fa-key"></i> Confirm
+                                Password</label>
+                            <div class="input-group">
+                                <input type="password" class="form-control" id="signupConfirmPassword"
+                                    placeholder="Confirm your password" required>
+                                <span class="input-group-text toggle-password"
+                                    onclick="togglePassword('signupConfirmPassword')">
+                                    <i class="fas fa-eye"></i>
+                                </span>
+                            </div>
+                        </div>
+                        <!-- Terms & Conditions -->
+                        <div class="form-check mb-3">
+                            <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                            <label class="form-check-label" for="termsCheck">
+                                I agree to the <a href="#" class="text-success">Terms & Conditions</a>
+                            </label>
+                        </div>
+                        <!-- Signup Button -->
+                        <button type="submit" class="btn btn-success w-100"><i class="fas fa-user-plus"></i> Sign
+                            Up</button>
+                    </form>
+
+                    <!-- Social Signup -->
+                    <div class="text-center mt-4">
+                        <p class="mb-2">Or sign up with</p>
+                        <div class="d-flex justify-content-center">
+                            <button class="btn btn-outline-danger mx-2"><i class="fab fa-google"></i> Google</button>
+                            <button class="btn btn-outline-primary mx-2"><i class="fab fa-facebook-f"></i>
+                                Facebook</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Login Link -->
+                <div class="modal-footer justify-content-center">
+                    <p>Already have an account?
+                        <a href="#" class="text-primary" data-bs-dismiss="modal" data-bs-toggle="modal"
+                            data-bs-target="#loginModal">Login</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- FontAwesome for icons -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content shadow-lg border-0 rounded">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="settingsModalLabel"><i class="fas fa-cog"></i> Account Settings</h5>
+                    <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Tabs -->
+                    <ul class="nav nav-pills nav-justified mb-3" id="settingsTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="profile-tab" data-bs-toggle="pill" href="#profileSettings"
+                                role="tab">
+                                <i class="fas fa-user"></i> Profile
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="security-tab" data-bs-toggle="pill" href="#securitySettings"
+                                role="tab">
+                                <i class="fas fa-lock"></i> Security
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="preferences-tab" data-bs-toggle="pill" href="#preferencesSettings"
+                                role="tab">
+                                <i class="fas fa-sliders-h"></i> Preferences
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Tab Content -->
+                    <div class="tab-content">
+                        <!-- Profile Settings -->
+                        <div class="tab-pane fade show active" id="profileSettings" role="tabpanel">
+                            <div class="card shadow-sm p-3 border-0">
+                                <h5 class="mb-3"><i class="fas fa-user-edit"></i> Edit Profile</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="settingsName" class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" id="settingsName"
+                                            placeholder="Enter your name">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="settingsEmail" class="form-label">Email</label>
+                                        <input type="email" class="form-control" id="settingsEmail"
+                                            placeholder="Enter your email">
+                                    </div>
+                                    <button type="submit" class="btn btn-primary w-100"><i class="fas fa-save"></i> Save
+                                        Changes</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Security Settings -->
+                        <div class="tab-pane fade" id="securitySettings" role="tabpanel">
+                            <div class="card shadow-sm p-3 border-0">
+                                <h5 class="mb-3"><i class="fas fa-key"></i> Change Password</h5>
+                                <form>
+                                    <div class="mb-3">
+                                        <label for="currentPassword" class="form-label">Current Password</label>
+                                        <input type="password" class="form-control" id="currentPassword"
+                                            placeholder="Enter current password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="newPassword" class="form-label">New Password</label>
+                                        <input type="password" class="form-control" id="newPassword"
+                                            placeholder="Enter new password">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                                        <input type="password" class="form-control" id="confirmPassword"
+                                            placeholder="Confirm new password">
+                                    </div>
+                                    <button type="submit" class="btn btn-danger w-100"><i class="fas fa-lock"></i>
+                                        Update Password</button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Preferences Settings -->
+                        <div class="tab-pane fade" id="preferencesSettings" role="tabpanel">
+                            <div class="card shadow-sm p-3 border-0">
+                                <h5 class="mb-3"><i class="fas fa-bell"></i> Notification Preferences</h5>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" id="emailNotifications" checked>
+                                    <label class="form-check-label" for="emailNotifications">
+                                        Receive email notifications
+                                    </label>
+                                </div>
+                                <div class="form-check mb-3">
+                                    <input class="form-check-input" type="checkbox" id="smsNotifications">
+                                    <label class="form-check-label" for="smsNotifications">
+                                        Receive SMS notifications
+                                    </label>
+                                </div>
+
+                                <h5 class="mb-3"><i class="fas fa-moon"></i> Appearance</h5>
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="darkModeToggle">
+                                    <label class="form-check-label" for="darkModeToggle">
+                                        Enable Dark Mode
+                                    </label>
+                                </div>
+                                <button class="btn btn-success w-100 mt-3"><i class="fas fa-save"></i> Save
+                                    Preferences</button>
+                            </div>
+                        </div>
+                    </div> <!-- End Tab Content -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Include Bootstrap and JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- carsoul -->
     <section id="carousel" class="py-5">
         <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel"
-            data-interval="3000" data-pause="hover">
+            data-interval="4000" data-pause="hover">
             <!-- Custom Indicators -->
             <ol class="carousel-indicators">
                 <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -919,30 +550,33 @@
             <!-- Carousel Inner -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuaYN08rOSOrcXWjjypze1euII5wYGsJ_nKQ&s"
-                        class="d-block w-100" alt="Sale Banner 1">
-                    <div class="carousel-caption d-none d-md-block fade-caption">
-                        <h5 class="carousel-title">Exclusive Offer: 50% Off</h5>
-                        <p>Shop now and grab the best deals!</p>
-                        <a href="#" class="btn btn-light btn-lg">Shop Now</a>
+                    <div class="carousel-overlay"></div>
+                    <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxASEhUSEhIWFhUXFRUWFhcVFRUQGBUXFRUXFxUWFRcYHSggGBolHRUXITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OGhAQGi0dHx0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tKy0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALABHgMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAACAQMEBQYAB//EAEgQAAIBAgMFBgIGBwYCCwAAAAECAwARBBIhBTFBUWEGEyJxgZEyoRQjQnKxwQdSYoKS0fAzU5OisuFDcxU0RFRjg4Sjs8PS/8QAGgEAAwEBAQEAAAAAAAAAAAAAAAECAwQFBv/EACkRAAICAgEDAwIHAAAAAAAAAAABAhEDIRIEMUETIlEFFDJhcYGRoeH/2gAMAwEAAhEDEQA/APNRTUpqU8VRJRXoNHjwdsiuKaMVSCKdiSs+NnRz4ogdxSjDnlV7HhgamwbPB4Vaw2Yz61RMwuDNEcC3KtvBse/CrCPs9fhWq6Rs45/V4RPM3wJ5U02FK8Nf6316fN2c6VT4/Ydr6VEulaNcP1eE3RgHU8aC1XO0MFlO6qt0rlljpnsY8qmrQ0BTix3o4o71cYHA5uFOGNyJy5lBWyqjgNKMKa2WG2MCN1FNsYDhXR9szz39ShdGJbDnmPw/GmmQitHjNmWqpmjI0/3FYTxOJ2YuoU+xBP8AKktT0iAnTT+udNAVi0dKYlqXLTqJenlhqlEhzoi5aTLU4wUy8dNwEsiZGrqcZaC1ZtGiYgpbUtqUCkMSlpbV1qqibEpDR2oWFFBY3XUpoaRQQo6FacC0USzYzJVXihV3KtVeLjr05rR4WCeyrLWpyKe1NTLTaiua2mejxTRfYPEXq/2eQay2A31pMA9q7MTPH6yFdjXbOiBq5ijFZ/Z+KAq5gxY516HjR8tmjJS2SZIxVFtSHNoBcnhVvJiBVVjFaV+4i1J+I8NN9z+qPn7VEnUdl9JjcsioxO18BELmSVV6KGkPuot7GsziNmqT9VMjclN4iegzgKT0vW723gMFh2IxEmduCoCxt5Xsvqao2GypfAC8JO4utgD5qSB6ivLypNn23SNwjuzMLh2RsrqQw3qRYjzrR7JA0oNp7HxMSIjHPAGukmhAzgfaGuWwvYaetPJCYmKkg23MpurDgyniCNarCqZPVy5R0avBBbU7iEW1UWHxluNPNjrjfXoqSo+dl08+VkPaiDWsrjUrRY6es7i21rhz00e50UWlsrJt5oByPvTku+mga4D2l2JES2qbGBUKJudSozWkDnyIfK1HlSn81MyNVyqjOF2QpFpmn5DTBrmkdkBKUUJNcKksdFKBQrRXqkZi2oWpb0LGmCGmoaI0NQaocSngKZWnRTREjdEVExUdTVpuYV6zVnzMJUzO4mOo4WrLFpUAjWuWUdnrY5XEmYQVbQSEVT4d6sEkNbQOXNG2WsWOtUmLbBHGs9NIajNiCK09Vo5vs4z8G1wm1jdmv8KM3roq/wCZhUvZ21u4ws81vFoAfM2Atyvv8qxWz8Wck55RA+0sX+59Kt8ch/6KjcG+aS54WszLY+tqieW0aYujUJKkVkuzmnglxQmVnQ5pYzn7wKzhQ97ZWF2HHSk2PseGTA4ud3USxtCIwxYEZmNyoGjZhcWO7LfSp36MsYVxwQEjvY5YrrYEEqWTLmBF8yrvFta3WJw6nWeBupxOzgT/AI2FYfhXP+I7nL01RguyuPbKcJIT3Uugv9libi3Qm340xiUKhkOpjNweaMf5kH941o+1mAwkMMTxIqyyMWHdvKy92txmKygMpL3A+6aqttxnvFPGSJif3kLL7Ej2rVaRz8uUii+mWpVxvWqt2Ncl6n1Gb+hEsJsRcetV8puakBSb+9MtGamTbLhFRK+QUAFSXShCVztHWpCRipK7qTDQliAASTwGp9KnPg14yrccAGcDoWAt7XqkjKUkRC1MSPT2JhZCL8RcEEEEXIuD5g+1Q3NKTKhEBzQVxpKyZulQhpBRGktSKCBrr0lJQKgr0jGkBpGoChDSV1dSKHFowabWipktG8jeulaoKTUTzV6yZ856TsjYuq5qvDg1CiSdsiHVQNXk+6OA/aOnnUZdpEHLhoVTrl76Q9SzA2/dArGR34uxFwqE7gfa9WKCnYTtJtTJL/ilflfSpRnxaj6y7j9sCYe5uRVwMsu2VeII41BdeWtWm1cRE4Tu48hAOfxFgxvoVB1UW4XqsxUDo2V1KtpowKnXUaHzqZsvEtD+znCuFY2DhkY8g4KgnyJDVb9mcM8yzYM3BAckHgRzH7LhT786zU0mp4j8hVnh8ZJdcRC2WeMeMb8ygW7zrpo3vxNsrN+OiPgGkw2IVvhkikB11sym48xp617Nh5IGxKwwtFZojJmheSFr57adzKFsQc9rXC3uNK87E+GxwHeHu5gLZxY36EfaHzpE7NSA6TRZeeZgfbLv9atI58u+49tzGSY3FEnexVFGYuAq6DxHUjiT1JqRi2P0wGNrCGMjMOHgKgeunvQptCDAkMrCWbXUjdy0B06neag7TxLQwksfrZTmY7rX1t08uFlq20Zwi7KrH4wh2GWN1v8AaiS/kWUBj53puKWFt8AHMo7Jbzz5xUGI3Nvfy4milk4D4eHXqetZ2jqrRYrHhSfjlH7qsPe4PypnE4RVYKLm+Ug88wBGhA51DV6nTyfWx/dh/wBCU9E7sbm2NNrZc9t+QrIR5hCagSYN1NipB6gr+NScZJ9Y/A5219TTw2jKi2V2HNcxsORA3Vm0jVOQWw8MGcLfLmZI836oe+dvRVI/eq1DzyzRJhgsMEsvdQnwkGzBSXJ1LeIEg776VG2Ni+8Ze8IAEguwRVN2jdQSVGovarf9HGLUieA5bWWUBwpFlzLIfGQo0ZTc30XdQiZfJm5zHLGSEVZL5ZLWsST4HX9XXwtbTUGrzst2fixGBLJYyiV1luBcAAGMC/C2vneu7YxQLiBFGiIyQStKY8urFWZQcqIugCfZ3sd9ZzZe3ZsFiHki1BYh0PwuuYmx5EcDw9wcsiR04JaGtrbE7piNb1Tslq9VDYbaEZeEjOACyHR0vzHK/HdWN2zsUxk6Vg7R1aZTYDZM89zEhIBsW0VQeVzx6Cpp7L4gC5yD94k/IVN2P2kaJRDJrGuikDVRyNt4+fnWmTFo6hlYMDxGtNOxNUYR9iTD9X3P8qiYjBsnxEeQN/yr0N8NmvbhvFYnbcREhpN0NIqbUpp1MvEX5a2tQyLyoUhOIya6uNdQAa0VCtFTJL9JKtMEiohnkFwDaND/AMRxvv8AsLpfncCqrCRF3VF3sQo8ybCrTGgTYhIENo1IiU8LA+J/U5mr0EzypRRN2HsOXHu00zlYx8Tm2th8K8AB7CmcZtjD4e8eFVXINu8YHKbcQu9vMm3SrXt1tRYY0wOHNkCguRxB1C36/EfMVnsV2SxiYYYtox3JCNmDoxAe2UlQbjeOFQ2zRRXkYPaHFk/2zDotox7LYVOwnaTEL8bCQcnF/wDN8Q9DUTshhopMZAkr5FMi+K2bW/hBFxoTYX61P7fvF/0hiDE+dTISSBYBvtKNdQDpfjanGQTim6ospo8Ji4GMSmPEpqVvcMCdT1A52uOPOqAytPdZCTNGCVJ1ZlQXMbHiRa48iOVq7C45onWRDZlNx+YPMEaHzqx2niNUxUYyk8N+V1YWHX/ahuwjBxZRsaJJWVgykgg6EGxFuVO7SRVlYL8JIZeiuA6j0DAVDLVi2dCRbwYmCRh3oMZJGZ4gCLcSYtNfukDpSYWdWzq87IAPBZWbOcwGXKDppc+lVI6Va4vGNhiYYDlZdJZF+Nn+0qtvVAdLC17XN7izUhOCJGzSglUIrE3vmkAW1tfCmov1JPkKb25jCZSL3A0N9bk6knrUrs3tXElmJnlICjfI53nqelQpO0GKLE985FzoTm49afLRHH3foMgDLpoW4HkDw56/6aYZ6sZ9tT3NyhsANYom13HevnUY7Wk4rCf/AE8H/wCKG0OmRg9WE7L30QDqRlguQfCDkQEMTusb35WNMHa54xQn/wApV/02oTtQHfh4faQfg9LkPgN45vrHsQfG2oNwfEdQeIpsSfa9D1Bp76dHxw0Xo0w/+yjixkN7fR115SSD8Samykh7ZMoEoV/gbw8t5BRtORCn3qyxTyd9I+GdYZWDJLHmCZgwsxRjoVYa24X04WqGxWH0PcuD0m4g6b0PSpu2cTCXKFXAdVIYssvd3sbgZAbaagHidKpPRPH3B4qckzSTyCSeUDOykWjQFc18oClmChQB+dZuQl2uBqxOg11J3CpOOle7IVVQGPhQWW448z0uTVhsLBAo7tcBQSSvxEXVFRP2ndgt+StWb26NV7URtk4jEYSZJ1VhlPjFr3Q/ErDhcc+NjXqWPhw+Mh72FlcW3jUg8mHA9DXm6lAqvLh1jid5IlaPMrqyBCc99HUd4txx13U1s/a0uBxHeR/C39pH9lhchlHkb5TwBHMipcTSMhrbeC7tj51B2fjnia6nQ7xwNb7tlstXVZo9UdQykcQwuD8687mjym1YtUzoTPRexeKMyz5rXURsPI5gfyrO9qsPZibUz2M2uMNiVZz9W4McnIK1iG9GCnyvWn7Y7N0JG7eD+dPuheTzqupXFjSVA2Mmkp4oCOtM1aZDQS0VCtLVEs1nZw2lMn93HK481Q5fmRUrsnDnn8h+JAqFsBrmYc8PLb0s34A1efo3eHvpO9IHgBW5tqG1tz3iu5M8yce5mtsYnvJ5H5u1vK+g9rVrv0TThpp8K6q6zwNZJLhGePxqGtw31itoplldeTsPYkVP7IbUGGxuHmJsFkXMf2T4W+RNZt7NOPtPSjgIB/2bY488U1CuCw7MFEOxixIAAxEjEk6AADeamY/DYNSZAuyREzN3busr5hfmPCW52NNY/H4fARHEPHgs5QnDdzg5YmaTTI6ySaFVvc2qzBOzCfpMfDJiFgghijMSBZjCCFaY2LgXN8q7h1vVXiIwNno1zdpCfKxddP4apMRKzsWYksxJJOpJJuTV92kXuoIMP9pQpYDXxHMSP4mYelZJ9zr41xR21dlC8ROJgF4Ijqzk/BYfCh4AVWnZqf8AeoP/AHj+EVMbVb65lBuEAj/w0CH5qahCobNVEu4sEkeKw6LKkoZoWJS9gWcXQ31uPzqtxjXkc82Y+5NFsyYRyxyHcsiMfJWBP4U7tPCmOV0PBiQeDKdVYdCCD60eBdmWXZweCQ+X4GqrCJd0B4so9zUvZmPWJXBBObda3I76gRyFSGG8EEeY3VV9jNJ2z1P9IGx4XlOFwowEbCW5Cg4eVQqEkTSOchBJ3DpUbB7GhhiwOHbDwy/S5pExGIsZSmWcR2gkU2TTjrvvWS7Rdq8biwY8RMXRWzqMqJrqAfCovo1QsFtrGpC2HillETHxRqSVPpw3DdTsSg6PVtlbIwUpaXE4GKERy4qIKIygaGNUtIwY6utz4xzooeyOBiRMNJEjOIZoZJSov30kmECPfmhxNgeFjXl2Kxe1Zzd2xchyGO571vA3xJ9021HG2tMyYTH2IcyAG9xJL3d72JuHYbyqn90chRyB438nrEvZzCJDIIcNG7xwQpm+jfSizpJi4pXKhlILNELvfgKHaOxMKLnD4XDyzqrCJO7CpcfRSySqSBJKEkkcHkeNq8kXBzWsZo1HXERn5Kx5n3oEwC38WIh95H/0oaOQvSfya79JODSJMN3cSIrRgkpHGmZjFEWuysWfUn4gtutZLbhN4/8AlJ+ddLhoABefU3Pgidt/38vKntpYnCs4IMr2UKFKLGDbgWDsbeQpM0jGqGMY8WY51ctaP4XVBbukve6E3vepRdRhmaMshAisC92P10typULuOQ9NKpcRKzMzNvJJPDf04CrDY2KC3VlD3zDKTbMHXKyg8G0Vl6r1qE9mjR6Ft6bDNs9sUYYy0kKsD3MP9tP4WYMBmDBg5ueMe+vN9srZgOQH/wAcd/nerE5QoXvZ5EWxELq0aJYsV70k5QoLPuGt25mqXaOLMkjMTckkk2tmJJLG3C5JNuGlOchYoUb3sNtMYjDNgpD44rtFf7UZN2X90n2bpWZ7SbPMbkW41S4DGPDIssZyuhup/nzB3W616RMI9oYb6Qgsw0kXirDePLiDyrJ7OiLo81BrTbL7SHufo8xuFFo2OpA4IenI+lUOOw5RiKj1BbH8V8RtTNdeuNKhHLTJpym2poTOFdXCuq0SaDYeKWOdGb4L5X+64Kt8iacjLYXEkN9hip6jmPTWqsVdFfpUYtrPGtiOMsa7iObqNLcQByrpizikiZ2n7OtHGuJQExvq37JJup0+yQay960mx+1ksUYgkOaIcCM1gfskHevSn5dj4PEeKGTuyd627xfQXDL5a0NctoSlw1L+Sx7S9v0xOEjwyQFLGIvmYMi90uUCFbeEHeah9te3DbQjSPue7Cv3jeNpMz5Anhv8CWHwjnUMdkiN+Ijt92S/sVH40fdYDDas3fuNwIGW/wBwEj+IkdKKfnRK4XrY32RwMKv9JxZKxx2ZQVP1jWJW3MaeptUGTG55JcWRYK47pTr4/F3a345fiPl1rsbipcWxeRskSnU7wvIAfacjcB8hrVfisUHBVRlRR4F3n4hdm5sd5PpuAqW6N4p92Q13+9cKQHWn8HhXkbKo3C7EkKqqN7Mx0A61masFas4Nq+EJLGkqroufMrKP1VdCDl13G45WoE+jocqoZ35nMiX/AGVXxt5kr5VMImtc4OO3/Le/vmv86tIylXkjjacY+HCw+vfP+Mlq5trtwjgXosETfNlNIIVnlIjVMOMuiu7WzKtsuZtczEaA8TVfJ4SVsQQSDcWNxvFuFK6BJFvPtzEAAiTLcWsioliNPsgcLH1qDLtbFEazy6/+I+vzprDWIKtuPw308Q3enA+lR3BvYjXdbl0pNspJHSzM3xMW+8S341NlgiGIjRVOQmC4J1OdULi4ta5Y7t16riKs5v8ArUfnhv8ARHQUQMRbO1hYZjYb7C+guaVFOg4t8h/WtdMviYnmfXWntMp01sNdbheNvwPS1IDoQXcKBflfTQbteA51bRwpGgYu8at8GQWmn/bF7ZU5DT1NRtkxB210LFENhqBI1iRyOQP8q0WztnJtCeWdJMrQTRkI6lo/o6kiMLl1FsgBvlXxb7mrSIk6KWaKKSMv3sj5LhklBEkQYj60EHxAEAFetZ+ZCpyneCQfO9vyrc9odkRRTRyrNnbEzT5lAiyKhsWAMcj6Xe2p+ydKjdjuyaY9p5JHISCOBmVbBnMgsBc7h4CSbX1pTRWOVmOlmY6FiQABqSdBew9Ln3NM1ru0vZEwHNGTlYBlBN7g9edZNlI0IsayZvQNbX9F+0wk8mHb4Z10++lyvuC3yrFU9hMQ0brIhsyMGU9VNxRYmaztjs7K5IFZMi1en7QljxmHWeMfENRxVh8SnyNed4+LKTUyWy07RDvS0NLUgcaBhR0hFAMAV1LaktVpkE+iSQqQykgg3BBsQRxBpu9ITW1nNRbvjoJ/7dSkn97EB4uskegJ6qR5Gkw2xO8dVixELZiALsYjrzDgH2vVOTQ3p8hqPwTp4ishiaQaPlLAll0Niw5jjUvGx4SF2CO2IsfCbd1Gep1LMPLL51T5qHNS5BxJOMxjyWzWAGiqoyqo5Ko3fieNMQ77cwR7im2NdHe9xw1vUNmiQ5hMO0jqi72NtdAOJJPAAXJPACtBg9nPic0cGmHjs0sp8Oc6/WPf1yr9kDXW5MCNO6iJQXedu7TT/h6F8v3iUX0cca0faUNDHBsqA+NihnNwueSQjKrMdAvHXS2WrSomX5FXNt2LD/V4RF00MrjMWP7KnS3Vr+QoJNtY6PI0rkB1DoGRLOpJAYArbLdSL9KY2p2axWGlWEx95I6K69z9euVrgFSlwxuD7Vru1XZ7FYtMIYsH9FjhwyRu+JkGH8VyzC8zAlASbG1/EadyZFQRT4vHptGIAokeIiXTKMokX+Y0FutxpcCixR7xFlb4ge7k5sQLofMrcE/sX3mpO0NiS4PFRxNJGz2ie8TF1HeG6LmIGpFjppZhT2IwDu2MVAoVGjbxOkYUlzbViBuZ6G7Gkk9digdr/wBbqkLIrDx6HcGGun7Q48r7/OnRgIh8eITyiVpj7+FP81KZ8Iu6KSTS3jcRjzyoL/5qgsj9w/CzjoQ3+4qyxCEYpCbKLwamw0Cx331FG1mH9mscf3Ixm/jfM3zqJPNmOZiWY6ksSSfMmnoKZZPhFRszTRg5r3zGUjXgIwRfzIptZMOv97Ib31ywg3/jJvVWzXrqVhxNDsbaEeYFo1RFnhdyuYvlBZSczk7s43WGoqZ2N2gmFxjiYhUKSI+dGbcQ6MFXXNmRd362+s3hpgDdhdWBVwLXseI6ggMOoq8nxPegNPB32RABNCSoKILDvMu4gDW9jVpkSj/ZP23thcXiPpCs+SLDqkecMbzOp8Ckkm2dydSdF4i1ROxHan6DimY6wSKIpBv8I0R7cSLX8iaq9pY8WCjKLDwrGcyoGAuzN9qQ7ieGvHdTmplIuEaR7v2swiPAhQgra6nfcN4rg8ta8m2ts4EnnwP5GtrsLapm2bCpNzGWibhYIbqPVWjHrVHi4r5r8/wrKe3Z0Q7UzDuhBsRrSCtHisErCx9DxFU8mz5A2UDNfcR+d91KwcT07sZhsuBjQ73zSHyZjl+QFYvtBhbO3nW+2NcCxAUBQqqNbKosKyPapfEap9iY9zGmuvSy76G9ZlC3rq69dQAhFJRUlNCaJBNITSUhrY56OJoSaRjQXpFpB3rhegvRI9jSsdBaDfr/AFxNAz1zixtQmixpGngw+bE4aPd3ccdx1K99p+9IfaqztDjDJiZidxkYcyQpyrc+QFXux5IhtRTL8BRTx44dSu70rM7ZUDETAG4717EcRmNjVSftIivd+x652Nx802yoBGJ3MLywusWJjwKgXEiNNKwzAWewseBqVs+KMvnP0FAmZ5GRZtryqkYzyBsTLeOM2BF+Z3Gsj+iTGoWmgmaEQ2WY98I2IeM5M8fe+AELIzG4JsmgvTm3u2cM2zXgbESSYhpWAADwosayeE5UtHkMYtlsTdugrRTXE55Y3zaRlztGTHbQEzgAvN3hA+yobNbrlQWHRRTG0sRmOIf9eVUHULctb+FPepWwhFBh5sS7fWMpigUb8zWzP5AfnVRjRlyRcVuW++1sw9AFXzU1k3SOlJXrwMKbC/PQfnQXrnb5aUNTZdB3om4eVN0Tfy/CgVC0q0IpaoQSngaRhbSlI+dC9IDhQGiNDSGXPZrbhwzENcxtbMBwI3MPzHH0rVYxFPjQ5lYXUjUEV55erPY22WgOUjNGd68uq8j+NIZoGShUAHWrGAo6Z0N1PH+fI1T499TQUmXmA2mVOp0qv7SyBvEONUoxRFNYnFEi1DYUVuI30zenpdaatUDOBohQ2rr0AHXUl66gBwmhZqQmhJrWzFI4mhrjSVNli11JS0AG+oB9D+X9dKCiQ8Of9ChNAFtjHJSDELvUCJujxfBfzjy/wtWg2lsaDGYeLEYaRBMQRLGTlu176k6BtbXNgwt65XZuNEeZXXNG4s63te2qsp4Op1B8xuJqZDs+QNnwkveDkpCSgcniJufTMOtXFmcl5WhobAxga30aX+Bsv8W63W9T4tiRwDvcWwt9mJWzMx5MRoB0B9RQ4ifaSRmRw6IGClmRYzma9gLgE7juqEZoQqyMzTStfMjAhEsTlzNe8mljYWGu/hR7UHuf+EjGbQZ2GIksDa0EdtABoHtuCi2nMgcAaqOBY7zcefM/1zpZpGkYsTdjz9gBwtwsKBzw4CpbstKgLV1LXUijhRtvoBREU0Jig0opB0ot3n+FMQXTjQWrga4mmIShNFXGkMCurq6pGTtk7TeBrjVT8S8+o61ZYudX8Sm4P9a8qz9HHIV3GgaJTtQFqVZA3Q8v5ULLUsdgGgIozQNQMG9dSV1AC116SuoAImhNLSGrMzqQ11JSKFrqSloA6nG1F+I3+XOm6JTagAa6jZeI3fhQ0UAuY2tfTfbhehpa6gA00BPoP6/rfSZqJZBaxFx7H3rvBzI8wD86YgdOXzpNOXzo8i/rfI11l5k+lqABWiyHedPOiVhfQfnQE3oEEW4Cgpa61AHV16S1dQFC3pCa6koASurq6kM6lpK6gDqdWY8daarqBjhagNJSA0qHYtdXXpaQ7ErqILShaAP/2Q=="
+                        class="d-block w-100 carousel-image" alt="Sale Banner 1">
+                    <div class="carousel-caption text-center fade-caption">
+                        <h2 class="carousel-title">Exclusive Offer: <span class="text-warning">50% Off</span></h2>
+                        <p class="lead">Shop now and grab the best deals!</p>
+                        <a href="#" class="btn btn-warning btn-lg btn-animated">Shop Now</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUbUU7w3aLTmJJyJU91mYw0XVvNmgIuGVdbg&s"
-                        class="d-block w-100" alt="Sale Banner 2">
-                    <div class="carousel-caption d-none d-md-block fade-caption">
-                        <h5 class="carousel-title">Smart Gadgets Sale</h5>
-                        <p>Upgrade your tech with the latest gadgets at amazing prices.</p>
-                        <a href="#" class="btn btn-light btn-lg">Explore Now</a>
+                    <div class="carousel-overlay"></div>
+                    <img src="data:image/jpeg;base64,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"
+                        class="d-block w-100 carousel-image" alt="Sale Banner 2">
+                    <div class="carousel-caption text-center fade-caption">
+                        <h2 class="carousel-title">Smart Gadgets Sale</h2>
+                        <p class="lead">Upgrade your tech with the latest gadgets at amazing prices.</p>
+                        <a href="#" class="btn btn-danger btn-lg btn-animated">Explore Now</a>
                     </div>
                 </div>
                 <div class="carousel-item">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTETybWUGat-isfd9kU4TX-PjKDqQpUPMm4dg&s"
-                        class="d-block w-100" alt="Sale Banner 3">
-                    <div class="carousel-caption d-none d-md-block fade-caption">
-                        <h5 class="carousel-title">Winter Collection</h5>
-                        <p>Find cozy and stylish winter wear.</p>
-                        <a href="#" class="btn btn-light btn-lg">Shop Winter Wear</a>
+                    <div class="carousel-overlay"></div>
+                    <img src="data:image/jpeg;base64,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"
+                        class="d-block w-100 carousel-image" alt="Sale Banner 3">
+                    <div class="carousel-caption text-center fade-caption">
+                        <h2 class="carousel-title">Winter Collection</h2>
+                        <p class="lead">Find cozy and stylish winter wear.</p>
+                        <a href="#" class="btn btn-light btn-lg btn-animated">Shop Winter Wear</a>
                     </div>
                 </div>
             </div>
@@ -958,90 +592,135 @@
         </div>
     </section>
 
+
     <!-- AI Chatbot Button -->
-    <button id="chatbot-btn" class="btn btn-primary fixed-bottom right-0 m-3" data-toggle="modal"
-        data-target="#chatbot-modal">
-        <i class="fas fa-robot"></i> Chat with AI
+    <button id="chatbot-btn" class="btn btn-primary fixed-bottom right-0 m-3 rounded-circle shadow-lg"
+        data-toggle="modal" data-target="#chatbot-modal">
+        <i class="fas fa-robot fa-lg"></i> Chat with AI
     </button>
+
     <!-- AI Chatbot Modal -->
     <div class="modal fade" id="chatbot-modal" tabindex="-1" role="dialog" aria-labelledby="chatbotModalLabel"
         aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="chatbotModalLabel">AI Chatbot</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="chatbotModalLabel"><i class="fas fa-robot"></i> AI Chatbot</h5>
+                    <button type="button" class="close text-white" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="background-color: #f8f9fa;">
                     <div id="chat-container" class="chat-container">
-                        <div class="message-container">
-                            <!-- AI Chatbot Messages -->
+                        <div class="message-container" id="message-container">
+                            <!-- AI Chatbot Messages will appear here -->
                         </div>
-                        <input id="user-input" type="text" class="form-control" placeholder="Ask me anything...">
+                        <div class="input-container mt-4">
+                            <input id="user-input" type="text" class="form-control shadow-sm"
+                                placeholder="Ask me anything..." onkeydown="if(event.key === 'Enter'){sendMessage();}">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Product Search -->
-    <section id="search" class="py-5 bg-light">
+
+
+
+
+
+
+    <!-- search button -->
+    <section id="search" class="py-5 bg-light rounded shadow-sm">
         <div class="container text-center">
-            <h2 class="display-4">Search Products</h2>
-            <input type="text" id="search-input" class="form-control w-50 mx-auto" placeholder="Search for products...">
-            <p class="mt-3">Use the search bar to find the products you need or explore our recommendations!</p>
-        </div>
-    </section>
-
-    <!-- Sort Products -->
-    <section id="sort" class="py-5 bg-light">
-        <div class="container text-center">
-            <h3>Sort Products</h3>
-            <select id="sort-select" class="form-control w-50 mx-auto">
-                <option value="name">Sort by Name</option>
-                <option value="price">Sort by Price</option>
-                <option value="rating">Sort by Rating</option>
-            </select>
-        </div>
-    </section>
-
-    <!-- Featured Products -->
-    <section id="products" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Featured Products</h2>
-            <div class="row" id="product-list">
-                <!-- Product Cards will be dynamically loaded here -->
-            </div>
-        </div>
-    </section>
-    <!-- AI-Based Product Recommendations -->
-    <section id="recommended-products" class="py-5 bg-light">
-        <div class="container">
-            <h2 class="text-center mb-5">Recommended For You</h2>
-            <div class="row" id="recommendations">
-                <!-- Product Cards will be added here dynamically -->
-            </div>
-        </div>
-    </section>
-
-    <!-- Cart Modal -->
-    <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="cartModalLabel">Your Cart</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body" id="cart-items">
-                    <!-- Cart Items will be dynamically loaded here -->
+            <h2 class="display-4 font-weight-bold text-primary mb-4">Find Your Perfect Product</h2>
+            <div class="position-relative w-75 mx-auto">
+                <input type="text" id="search-input" class="form-control form-control-lg search-input shadow-sm"
+                    placeholder="Search for products..." oninput="showSearchResults()" aria-label="Search for products">
+                <i class="fas fa-search search-icon position-absolute top-50 end-0 translate-middle-y me-3"></i>
+                <div id="search-results" class="search-results shadow-sm mt-2 rounded">
+                    <!-- Dynamic Search Results will appear here -->
                 </div>
             </div>
+            <p class="mt-3 text-muted">Start typing to find products or explore our top picks!</p>
         </div>
-    </div>
+    </section>
+
+
+    <!-- Main Content Section -->
+    <section id="main-content" class="container py-5">
+        <!-- Sort Section -->
+        <section id="sort" class="py-4 bg-light rounded shadow-sm mb-5">
+            <div class="text-center">
+                <h3 class="display-4 font-weight-bold text-primary">Sort Products</h3>
+                <select id="sort-select" class="form-select w-50 mx-auto">
+                    <option value="name">Sort by Name</option>
+                    <option value="price">Sort by Price</option>
+                    <option value="rating">Sort by Rating</option>
+                </select>
+            </div>
+        </section>
+
+        <!-- Product Display Area -->
+        <section id="products" class="py-5">
+            <div class="container">
+                <h2 class="text-center mb-4 text-primary font-weight-bold">🛍️ Browse Products</h2>
+                <div class="row">
+                    <!-- Categories Sidebar -->
+                    <div class="col-md-3">
+                        <ul class="list-group">
+                            <li class="list-group-item active" data-category="all">
+                                <i class="fas fa-home me-2"></i> All Products
+                            </li>
+                            <li class="list-group-item" data-category="electronics">
+                                <i class="fas fa-laptop me-2"></i> Electronics
+                            </li>
+                            <li class="list-group-item" data-category="fashion">
+                                <i class="fas fa-tshirt me-2"></i> Fashion
+                            </li>
+                            <li class="list-group-item" data-category="home">
+                                <i class="fas fa-couch me-2"></i> Home & Kitchen
+                            </li>
+                            <li class="list-group-item" data-category="sports">
+                                <i class="fas fa-basketball-ball me-2"></i> Sports & Outdoors
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Product Cards Section -->
+                    <div class="col-md-9">
+                        <div class="row" id="product-list">
+                            <!-- Product Cards will be dynamically inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cart Modal -->
+        <div class="modal fade" id="cart-modal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content shadow-lg border-0">
+                    <div class="modal-header bg-dark text-white">
+                        <h5 class="modal-title" id="cartModalLabel"><i class="fas fa-shopping-cart"></i> Your Cart</h5>
+                        <button type="button" class="btn-close text-white" data-bs-dismiss="modal"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body" id="cart-items">
+                        <p class="text-center text-muted">Your cart is empty.</p>
+                        <!-- Cart items will be dynamically inserted here -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-success">Checkout</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Footer Section -->
     <footer class="bg-dark text-white pt-5 pb-3">
@@ -1100,56 +779,12 @@
     </footer>
 
     <!-- Footer Styling (Add this to your CSS) -->
-    <style>
-        footer {
-            font-size: 14px;
-        }
-
-        footer a {
-            text-decoration: none;
-            color: white;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        footer i {
-            font-size: 20px;
-            transition: color 0.3s;
-        }
-
-        footer i:hover {
-            color: #ffcc00;
-            /* Highlight social media icons */
-        }
-
-        footer .form-inline input {
-            width: 250px;
-            margin-bottom: 10px;
-        }
-
-        footer .form-inline button {
-            background-color: #ffcc00;
-            color: black;
-            border: none;
-        }
-
-        footer .form-inline button:hover {
-            background-color: #e6b800;
-        }
-
-        footer .col-md-4 h4 {
-            font-weight: bold;
-            margin-bottom: 10px;
-        }
-    </style>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="app.js"></script>
-       
+
     <!-- jQuery and Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"></script>
@@ -1166,7 +801,169 @@
             console.log("jQuery and Bootstrap are loaded!");
         });
     </script>
-    
+
+    <!-- search button  -->
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("search-input");
+            const searchResults = document.getElementById("search-results");
+
+            const products = [
+                { name: "Smartphone", category: "Electronics" },
+                { name: "T-shirt", category: "Fashion" },
+                { name: "Coffee Maker", category: "Home & Kitchen" },
+                { name: "Running Shoes", category: "Sports" },
+                { name: "Smart Watch", category: "Electronics" },
+                { name: "Gaming Headset", category: "Electronics" },
+                { name: "Yoga Mat", category: "Sports" },
+                { name: "Men's Leather Jacket", category: "Fashion" },
+            ];
+
+            searchInput.addEventListener("input", function () {
+                const query = searchInput.value.toLowerCase();
+                searchResults.innerHTML = "";
+
+                if (query.length > 0) {
+                    const filteredProducts = products.filter(product =>
+                        product.name.toLowerCase().includes(query)
+                    );
+
+                    if (filteredProducts.length > 0) {
+                        searchResults.classList.add("show");
+                        filteredProducts.forEach(product => {
+                            const resultItem = document.createElement("div");
+                            resultItem.classList.add("result-item");
+                            resultItem.innerHTML = `<i class="fas fa-box-open me-2"></i><strong>${product.name}</strong> - ${product.category}`;
+                            resultItem.addEventListener("click", () => {
+                                alert(`You selected ${product.name}`);
+                                searchResults.classList.remove("show");
+                            });
+                            searchResults.appendChild(resultItem);
+                        });
+                    } else {
+                        searchResults.classList.add("show");
+                        searchResults.innerHTML = "<p>No results found.</p>";
+                    }
+                } else {
+                    searchResults.classList.remove("show");
+                }
+            });
+        });
+    </script>
+
+    <!--  side nav  cards-->
+
+    <!--  js for search button -->
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const searchInput = document.getElementById("search-input");
+            const searchResultsContainer = document.getElementById("search-results");
+
+            // Sample products data
+            const products = [
+                { name: "iPhone 14 Pro", price: 999, img: "https://via.placeholder.com/200" },
+                { name: "Samsung Galaxy S23", price: 899, img: "https://via.placeholder.com/200" },
+                { name: "Nike Sneakers", price: 120, img: "https://via.placeholder.com/200" },
+                { name: "Men's Leather Jacket", price: 250, img: "https://via.placeholder.com/200" },
+                { name: "Air Fryer", price: 150, img: "https://via.placeholder.com/200" },
+                { name: "Couch Set", price: 1200, img: "https://via.placeholder.com/200" },
+                { name: "Treadmill", price: 600, img: "https://via.placeholder.com/200" },
+                { name: "Yoga Mat", price: 40, img: "https://via.placeholder.com/200" }
+            ];
+
+            // Show search results dynamically
+            function showSearchResults() {
+                const query = searchInput.value.toLowerCase();
+                const filteredProducts = products.filter(product => product.name.toLowerCase().includes(query));
+
+                // Clear previous results
+                searchResultsContainer.innerHTML = '';
+
+                // Display filtered results
+                filteredProducts.forEach(product => {
+                    const resultItem = document.createElement('div');
+                    resultItem.classList.add('search-result-item', 'd-flex', 'align-items-center', 'py-2');
+                    resultItem.innerHTML = `
+                <img src="${product.img}" alt="${product.name}" class="search-result-img mr-3" width="50">
+                <div>
+                    <strong>${product.name}</strong>
+                    <p class="mb-0">$${product.price}</p>
+                </div>
+            `;
+                    searchResultsContainer.appendChild(resultItem);
+                });
+
+                // Show message if no results found
+                if (filteredProducts.length === 0) {
+                    searchResultsContainer.innerHTML = '<div class="p-3 text-muted">No products found</div>';
+                }
+            }
+        });
+    </script>
+    <!--  for chatgpt -->
+    <script>document.addEventListener("DOMContentLoaded", function () {
+            const messageContainer = document.getElementById('message-container');
+            const userInput = document.getElementById('user-input');
+            const chatbotBtn = document.getElementById('chatbot-btn');
+
+            // Function to display messages
+            function displayMessage(message, sender) {
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add(sender === 'user' ? 'user-message' : 'ai-message');
+                messageDiv.innerText = message;
+                messageContainer.appendChild(messageDiv);
+                messageContainer.scrollTop = messageContainer.scrollHeight;  // Auto-scroll to latest message
+            }
+
+            // Function to simulate AI response
+            function simulateAIResponse(userMessage) {
+                const responses = [
+                    "I'm here to help! Can you tell me more?",
+                    "Interesting question! Let me think...",
+                    "That sounds great, let's dive deeper!",
+                    "Can you clarify your question a bit more?"
+                ];
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+
+                // Simulate typing effect for the AI
+                const aiMessage = document.createElement('div');
+                aiMessage.classList.add('ai-message');
+                aiMessage.innerHTML = '<div class="typing-effect"></div>';
+                messageContainer.appendChild(aiMessage);
+                messageContainer.scrollTop = messageContainer.scrollHeight;
+
+                setTimeout(() => {
+                    aiMessage.innerHTML = randomResponse;
+                    messageContainer.scrollTop = messageContainer.scrollHeight;
+                }, 1000);  // Delay for AI response
+            }
+
+            // Handle Enter key press for sending user message
+            function sendMessage() {
+                const userMessage = userInput.value.trim();
+                if (userMessage) {
+                    displayMessage(userMessage, 'user');
+                    userInput.value = '';  // Clear the input field
+                    simulateAIResponse(userMessage);
+                }
+            }
+
+            // Add event listener for the Enter key
+            userInput.addEventListener('keydown', function (event) {
+                if (event.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Floating button animation (optional)
+            chatbotBtn.addEventListener("click", function () {
+                const modal = new bootstrap.Modal(document.getElementById('chatbot-modal'));
+                modal.show();
+            });
+        });
+    </script>
+    <!-- Include JQuery and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="app.js"></script>
 </body>
 
 </html>
